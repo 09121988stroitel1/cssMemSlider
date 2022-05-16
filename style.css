@@ -1,0 +1,179 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+background: rgba(0, 229, 255, 0.099);
+}
+
+.wrapper {
+	height: 550px;
+	margin: 100px auto 0;
+	position: relative;
+	width: 700px;
+	background-color: rgba(23, 22, 22, 0.697);
+	
+}
+.text {
+	height: 20px;
+	width: 100px;
+	position: absolute;
+	top: 490px;
+	left: 20px;
+	overflow: hidden;
+	color: #ddd;
+	font-size: 1rem;
+
+}
+
+.slider {
+	background-color: #ddd;
+	height: 450px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 15px;
+	width: 650px;
+	margin: 20px auto 0;
+	background-size: cover;
+
+}
+
+.wrapper > input {
+	display: none;
+}
+
+.slides {
+	height: inherit;
+	position: absolute;
+	width: inherit;
+	background-size: cover;
+}
+
+.slide1 { background-image: url(./img/alfa-romeo-2ettottanta.jpg); }
+.slide2 { background-image: url(./img/audi-tts-tuning.jpg); }
+.slide3 { background-image: url(./img/bmw_m5_gold.jpg); }
+.slide4 { background-image: url(./img/honda_accord_type-r_2.jpg); }
+
+.wrapper .controls {
+	left: 50%;
+	margin-left: 190px;
+	position: absolute;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+		border-radius: 50%;
+}
+
+.wrapper label:after {
+	border: 2px solid #ddd;
+	content: " ";
+	display: block;
+	height: 12px;
+	left: -4px;
+	position: absolute;
+	top: -4px;
+	width: 12px;
+
+	border-radius: 50%;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+
+	border-radius: 50%;
+	-webkit-transition: background ease-in-out .5s;
+	-moz-transition: background ease-in-out .5s;
+	-o-transition: background ease-in-out .5s;
+	transition: background ease-in-out .5s;
+}
+
+.wrapper label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5) {
+	background: #ddd;
+}
+
+
+.slides {
+	height: inherit;
+	opacity: 0;
+	position: absolute;
+	width: inherit;
+	z-index: 0;
+	
+	transform: scale(1.5);
+
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+.tex {
+	height: inherit;
+	opacity: 0;
+	position: absolute;
+	width: inherit;
+	z-index: 0;
+
+	transform: scale(1.5);
+
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+	opacity: 1;
+	z-index: 1;
+
+	transform: scale(1);
+}
+
+#slide1:checked ~ .text > .slid1,
+#slide2:checked ~ .text > .slid2,
+#slide3:checked ~ .text > .slid3,
+#slide4:checked ~ .text > .slid4 {
+	opacity: 1;
+	z-index: 1;
+		transform: scale(1);
+}
+
+
+@media screen and  (max-width: 767px) {
+	.wrapper {
+		height: 350px;
+		width: 300px;
+			}
+			.slider {
+				
+				height: 240px;
+			
+				width: 280px;
+	
+			}
+			.text {
+			
+				top: 290px;
+				left: 10px;
+			}	
+			.wrapper .controls {
+				left: 20%;
+				margin-left: 10px;
+				position: absolute;
+			}	
+}
