@@ -154,3 +154,26 @@ background: rgba(0, 229, 255, 0.099);
 }
 
 
+@media screen and  (max-width: 767px) {
+	.wrapper {
+		height: 350px;
+		width: 300px;
+			}
+			.slider {
+				
+				height: 240px;
+			
+				width: 280px;
+	
+			}
+			.text {
+			
+				top: 290px;
+				left: 10px;
+			}	
+			.wrapper .controls {
+				left: 20%;
+				margin-left: 10px;
+				position: absolute;
+			}	
+}
